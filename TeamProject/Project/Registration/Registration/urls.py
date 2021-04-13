@@ -20,8 +20,11 @@ from django.conf.urls.static import static
 
 
 
-urlpatterns = [
+from . import views
 
+
+
+urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')
     )

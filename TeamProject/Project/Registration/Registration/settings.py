@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'easy_maps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -115,6 +116,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+EASY_MAPS_GOOGLE_KEY = 'AIzaSyBedj9JUth1jAfsAKgrP4S2qbKj48Y_QF8'
+
+EASY_MAPS_CENTER = (-41.3, 32)
 
 
 # Static files (CSS, JavaScript, Images)
