@@ -1,0 +1,163 @@
+
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>User Login</title>
+</head>
+<body>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="index.html">
+                        <h1><span>B</span>OX <span>I</span>T</h1>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                      <li><a href="/" data-after="Home">Home</a></li>
+                      <li><a href="login" data-after="Sign-In">Sign In</a></li>
+                      <li><a href="register" data-after="sign-up">Sign Up</a></li>
+                      <li><a href="become" data-after="Projects">Become A Driver</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+
+{% block content %}
+<h3 id="map">Django Google Maps API  - Map</h3>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Start</td>
+        <td>{{directions.origin}}</td>      
+      </tr>
+      <tr>
+        <td>Destination</td>
+        <td>{{directions.destination}}</td>      
+      </tr>
+      <tr>
+        <td>Duration</td>
+        <td>{{directions.duration}}</td>      
+      </tr>
+      <tr>
+        <td>Distance</td>
+        <td>{{directions.distance}}</td>      
+      </tr>
+      <tr>
+        <td>Directions</td>
+        <td id="dir-toggle">click <a href="javascript:void(0)" onclick="DirectionsToggle()">here</a></td>      
+      </tr>
+
+    </tbody>
+  </table>
+
+  <table id="dir-table" hidden>
+    <thead>
+      <tr>
+        <th>Directions</th>
+        <th>Distance</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dist, dur, text in directions.steps %}
+      <tr>
+        <td>{{text|safe}}</td>
+        <td>{{dist}}</td>
+        <td>{{dur}}</td>   
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+
+   <div id="map-route"></div>
+
+
+</div>
+
+{% endblock %}
+
+<div class="pricing-table">
+  <div class="pricing-card">
+    <h3 class="pricing-card-header">Small Package</h3>
+    <div class="price"><sup>$</sup>5<span></span></div>
+    <ul>
+      <li><strong></strong> Small Parcels</li>
+      <li><strong>up to 10 </strong> KG</li>
+      <li><strong>$2</strong>Per Kilometer</li>
+     
+
+    </ul>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+
+  <div class="pricing-card">
+    <h3 class="pricing-card-header">Medium Package</h3>
+    <div class="price"><sup>$</sup>10<span></span></div>
+    <ul>
+      <li><strong></strong> Medium Parcels</li>
+      <li><strong>up to 20 </strong> KG</li>
+      <li><strong>$3</strong> Per Kilometer</li>
+
+    </ul>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+
+  <div class="pricing-card">
+    <h3 class="pricing-card-header">Large Package</h3>
+    <div class="price"><sup>$</sup>20<span></span></div>
+    <ul>
+      <li><strong></strong> Large Parcels</li>
+      <li><strong>up to 50 </strong> KG</li>
+      <li><strong>$5</strong> Per Kilometer</li>
+
+
+    </ul>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+    var google_api_key = "{{google_api_key|safe}}";
+    var lat_a = "{{lat_a|safe}}";
+    var long_a = "{{long_a|safe}}";
+    var lat_b = "{{lat_a|safe}}";
+    var long_b = "{{long_b|safe}}";
+    var origin = "{{origin|safe}}";
+    var destination = "{{destination|safe}}";
+    var directions = "{{directions|safe}}"
+
+  </script>
+
+  <script src="{% static 'google_maps.js' %}"></script>
+  <script src="{% static 'main.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+
