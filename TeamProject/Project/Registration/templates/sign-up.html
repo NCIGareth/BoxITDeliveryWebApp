@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,6 @@
                         <li><a href="/" data-after="Home">Home</a></li>
                         <li><a href="login" data-after="Sign-In">Sign In</a></li>
                         <li><a href="register" data-after="sign-up">Sign Up</a></li>
-                        <li><a href="become" data-after="Projects">Become A Driver</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,22 +36,39 @@
         <div class="title">User Registration</div>
         <div class="content">
           <form action="register" method="post">
-            {% csrf_token %}
-    
-            <input type="text" name="first_name" placeholder="First Name"><br>
-            <input type="text" name="last_name" placeholder="Last Name"><br>
-            <input type="text" name="username" placeholder="Username"><br>
-            <input type="email" name="email" placeholder="email"><br>
-            <input type="password" name="password1" placeholder="Password"><br>
-            <input type="password" name="password2" placeholder="Confirm Password"><br>
-            <input type="Submit">
-    
-        </form>
-        <div>
-          {% for message in messages %}
-          <h3> {{message}}  </h3>
-          {% endfor %}
-      </div>
+          {% csrf_token %}
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">First Name</span>
+                <input type="text" placeholder="first_name" name="first_name" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Last Name</span>
+                <input type="text" placeholder="last_name" name="last_name" required>
+              </div>
+              <div class="input-box">
+                <span class="details"> UserName</span>
+                <input type="text" placeholder="username" name="username" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" placeholder="password1" name="password1" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Confirm Password</span>
+                <input type="password" placeholder="password2" name="password2" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="email" placeholder="email" name="email" required>
+              </div>
+  
+            </div>
+           
+            <div class="button">
+              <input type="submit" value="Register">
+            </div>
+          </form>
         </div>
       </div>
   <script src="./app.js"></script>

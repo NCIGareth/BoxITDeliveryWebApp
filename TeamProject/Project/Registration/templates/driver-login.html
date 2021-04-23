@@ -1,3 +1,5 @@
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="driver-login.css" />
+    <link rel="stylesheet" href="{% static 'driver-login.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Driver Login</title>
 </head>
@@ -24,11 +26,9 @@
                         <div class="bar"></div>
                     </div>
                     <ul>
-                        <li><a href="index.html" data-after="Home">Home</a></li>
-                        <li><a href="Sign-In.html" data-after="Projects">Sign In</a></li>
-                        <li>
-                            <a href="Become-a-driver.html" data-after="Projects">Become A Driver</a>
-                        </li>
+                        <li><a href="/" data-after="Home">Home</a></li>
+                        <li><a href="login" data-after="Sign-In">Sign In</a></li>
+                        <li><a href="register" data-after="sign-up">Sign Up</a></li>
                     </ul>
                 </div>
             </div>

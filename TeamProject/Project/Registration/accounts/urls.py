@@ -14,5 +14,6 @@ urlpatterns = [
     path("route", views.route, name="route"),
 	path("map", views.map, name="map"),
     path("become",views.become, name="become")
+    
     ]
 

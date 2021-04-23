@@ -59,7 +59,7 @@ def login(request):
 
         if user is not None: 
             auth.login(request, user)
-            return redirect("/")
+            return render(request,"driver-login.html")
         else:
             messages.info(request, 'Invalid credentials')
             return redirect('login')

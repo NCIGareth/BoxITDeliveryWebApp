@@ -294,7 +294,7 @@ p {
   text-align: center;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 20px 0;
 }
 #services .service-top {
   max-width: 600px;
@@ -313,7 +313,7 @@ p {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   background-image: url(./img/img-5.jpg);
   background-size: cover;
@@ -356,7 +356,7 @@ p {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 40px 20px;
 }
 #about .col-left {
   width: 250px;
@@ -670,7 +670,7 @@ p {
   /* contact  */
   #contact .contact {
     flex-direction: column;
-    padding: 100px 0;
+    padding: 20px 0;
     align-items: center;
     justify-content: center;
     min-width: 20vh;
@@ -688,8 +688,8 @@ p {
     flex-direction: row;
   }
   #contact .contact-item .icon {
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
   }
   #contact .contact-item .icon img {
     object-fit: contain;

@@ -27,7 +27,6 @@
                         <li><a href="/" data-after="Home">Home</a></li>
                         <li><a href="login" data-after="Sign-In">Sign In</a></li>
                         <li><a href="register" data-after="sign-up">Sign Up</a></li>
-                        <li><a href="become" data-after="Projects">Become A Driver</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,9 +38,15 @@
             <div class="title">Login Form</div>
             <form action="login" method="post">
                 {% csrf_token %}
-                <input type="text" name="username" placeholder="Username"><br>
-                <input type="password" name="password" placeholder="password"><br>
+                <div class="field">
+                    <input type="text" name="username" placeholder="Username"><br>
+                    </div>
+                    <div class="field">
+                    <input type="password" name="password" placeholder="password"><br>
+                </div>
+                <div class="field">
                 <input type="Submit">
+            </div>
             </form>
             <div>
                 {% for message in messages %}
